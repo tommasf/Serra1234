@@ -1,0 +1,57 @@
+
+<html>
+<head>
+    <title>Piante</title>
+    <style>
+        .pianta-box {    /* crea e personalizza una scatola attorno alle singole piante, nomi e descrizioni*/
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: calc(35% - 20px);
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .pianta-box img {   /* personalizza posizione e dimensione della foto della pianta*/
+            width: 50%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .pianta-box h2 {  /* personalizzazione nome della pianta*/
+            margin-top: 0;
+        }
+        .pianta-box p {  /* personalizzazione posizione e dimensione della descrizione pianta */
+            max-width: 50%;
+            overflow-wrap: break-word;
+            text-align: center;
+            padding-left: 150px
+        }
+        .pianta-box ul {  /* personalizzazione di posizione ed avvicinamento dei punti della lista requisiti della pianta */
+            margin-top: 5px;
+            padding-left: 20px;
+            list-style-position: inside; 
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Piante</h1>
+        <div>
+            {% for pianta in piante %}
+            <div class="pianta-box">
+                <img src="{{ url_for('static', filename='piante/pianta' + loop.index|string + '.jpg') }}" alt="{{ pianta.nome }}">  <!-- raccoglimento foto-->
+                <h2>{{ pianta.nome }}</h2>
+                <p>{{ pianta.descrizione }}</p>
+                <h3>Requisiti:</h3>   <!-- elenco requisiti -->
+                <ul>
+                    <li><strong>Temperatura:</strong> {{ pianta.temperatura }}</li>                    
+                    <li><strong>Umidità:</strong> {{ pianta.umidita }}</li>
+                    <li><strong>Esposizione:</strong> {{ pianta.esposizione }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
