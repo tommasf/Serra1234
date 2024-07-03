@@ -1,8 +1,149 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-    <title>Benvenuto 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensori e Attuatori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .nav {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .item div {
+            display: flex;
+            flex-direction: column;
+        }
+        .status {
+            font-weight: bold;
+            text-align: right;
+            display: flex;
+            align-items: center;
+        }
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .active {
+            background-color: green;
+        }
+        .standby {
+            background-color: orange;
+        }
+        .inactive {
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
-    <h1>Benvenuto alla pagina 2!</h1>
+    <div class="nav">
+        <a href="/home.html">Home</a>
+        <a href="/piante.html">Piante</a>
+        <a href="/storico.html">Storico</a>
+    </div>
+    <div class="container">
+        <h1>Sensori e Attuatori</h1>
+
+        <div class="section">
+            <h2>Sensori</h2>
+            <div class="item">
+                <div>
+                    <span><strong>Nome:</strong> DHT11</span>
+                    <span><strong>Descrizione:</strong> Misura la temperatura e l'umidità interna</span>
+                </div>
+                <div class="status">
+                    <span class="indicator active"></span> Attivo
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <span><strong>Nome:</strong> DHT11</span>
+                    <span><strong>Descrizione:</strong> Misura l'umidità del suolo</span>
+                </div>
+                <div class="status">
+                    <span class="indicator standby"></span> Standby
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <span><strong>Nome:</strong> SE482048</span>
+                    <span><strong>Descrizione:</strong> Misura il livello dell'acqua nel serbatoio</span>
+                </div>
+                <div class="status">
+                    <span class="indicator inactive"></span> Inattivo
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Attuatori</h2>
+            <div class="item">
+                <div>
+                    <span><strong>Nome:</strong> Sistema di Irrigazione</span>
+                    <span><strong>Descrizione:</strong> Annaffia le piante</span>
+                </div>
+                <div class="status">
+                    <span class="indicator standby"></span> Standby
+                </div>
+            </div>
+            <div class="item">
+                <div>
+                    <span><strong>Nome:</strong> Quadro di Controllo</span>
+                    <span><strong>Descrizione:</strong> Mantiene temperatura e umidità regolari</span>
+                </div>
+                <div class="status">
+                    <span class="indicator active"></span> Attivo
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
