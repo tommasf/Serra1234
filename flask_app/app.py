@@ -39,7 +39,7 @@ def piante():
         }
     ]
     return render_template('piante.html', piante=piante)
-
+  #fdsafasf
 @app.route('/sensori')
 def sensori():
     return render_template('sensori.html')
